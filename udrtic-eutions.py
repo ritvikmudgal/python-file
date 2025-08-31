@@ -1,18 +1,17 @@
-import numpy as np
-
-def find_quartic_roots(a, b, c, d, e):
-    # Define the coefficients
-    coefficients = [a, b, c, d, e]
-    
-    # Find roots using numpy
-    roots = np.roots(coefficients)
-    
-    return roots
-
-# Example usage:
-a, b, c, d, e = 1, -4, 6, -4, 1  # (x - 1)^4 = 0
-roots = find_quartic_roots(a, b, c, d, e)
-
-print("Roots of the quartic equation:")
-for root in roots:
-    print(root)
+import math
+A=int(input("Enter A-")) 
+B=int(input("Enter B-")) 
+C=int(input("Enter C-")) 
+D=(B*B)-(4*A*C) 
+if D>0:
+    E=(-B+(math.sqrt(D)))/(2*A )
+    F=(-B-(math.sqrt(D)))/(2*A)
+    print("First root = ",E) 
+    print() 
+    print("Second root = ",F) 
+if D==0: 
+    E=(-B+(math.sqrt(D)))/2*A 
+    print("Same roots exist")
+    print("root = ",E) 
+if D<0: 
+    print("No Real roots")
